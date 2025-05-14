@@ -49,8 +49,8 @@ def run_hedge_fund(
     portfolio: dict,
     show_reasoning: bool = False,
     selected_analysts: list[str] = [],
-    model_name: str = "gpt-4o",
-    model_provider: str = "OpenAI",
+    model_name: str = "deepseek-chat",
+    model_provider: str = "DeepSeek",
 ):
     # Start progress tracking
     progress.start()
@@ -134,6 +134,7 @@ def create_workflow(selected_analysts=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the hedge fund trading system")
+    # fix this with the real balance on demo mode
     parser.add_argument("--initial-cash", type=float, default=100000.0, help="Initial cash position. Defaults to 100000.0)")
     parser.add_argument("--margin-requirement", type=float, default=0.0, help="Initial margin requirement. Defaults to 0.0")
     parser.add_argument("--tickers", type=str, required=True, help="Comma-separated list of stock ticker symbols")
